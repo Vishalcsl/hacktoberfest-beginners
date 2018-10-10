@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>survey form</title>
+	<style>
+		body{
+			background-color: #49d8b7;
+			text-align: center;
+			font-family: 'Raleway', Helvetica, sans-serif;
+
+		}
+		#title{
+			font-family: 'Raleway', Helvetica, sans-serif;
+			font-size: 2em;
+			font-weight:bold;
+			margin:20px;
+		}
+        #form-outer{
+        	background-color: rgb(250 ,250 , 250);
+        	border-radius:4px ;
+        	margin:0 auto;
+        	width:75%;
+        	max-width:900px;
+        	padding:10px;
+        	padding-top:20px;
+        }
+        .labels{
+           display:inline-block;
+           width:40%;
+           text-align: right;
+           vertical-align: top;
+           padding:5px;
+           margin-top:10px;
+        }
+        .row{
+
+        }
+        .tab{
+          display:inline-block;
+          text-align: left;
+          width:48%;
+          vertical-align: middle;
+
+        }
+        .input-field{
+          height:20px;
+          width:280px;
+          padding:5px;
+          margin:10px;
+          border:1px solid #c0c0c0;
+          border-radius:2px;
+
+        }
+        .dropdown{
+        	height:35px;
+        	width:140px;
+        	margin:10px;
+        	margin-top:15px;
+        	padding:5px;
+        	border:1px solid #c0c0c0;
+        	border-radius:2px;
+        }
+        .radio , .checkbox{
+        	position:relative;
+        	margin-left:10px;
+        	padding:10px;
+        	left:-43px;
+            display:block;
+        }
+        .userrating,input[type="checkbox"]{
+        	float:left;
+        	margin-right:5px;
+        }
+        #submit{
+        	background-color: #59ace0;
+        	border-radius:4px;
+        	color:white;
+             font-size:1em;
+             height:40px;
+             width:96px;
+             margin:10px;
+             border:0px solid;
+        }
+        @media screen and (max-width: 833px){
+        	.input-field{
+        		width:80%;
+        	}
+        	select{
+        		width:90%;
+        	}
+        }
+        @media screen and (max-width: 520px){
+        	.labels{
+        		width:100%;
+        		text-align:left;
+        	}
+        	.tab{
+        		width:80%;
+        		float: left;
+        	}
+        	.input-field{
+        		width:100%;
+        	}
+        	select{
+        		width:100%;
+        	}
+        }
+	</style>
+	</head>
+	<body>
+      <h1 id="title">Survey Form</h1>
+      <div id="form-outer">
+      	<p id="description">Please Let us know how we can improve Bookistan.</p>
+      	<form id="survey-form">
+      		<div clas="row">
+      			<div class="labels">
+      		<label id="name-label" for="name">* Name: </label>
+        	    </div>
+        	    <div class="tab">
+      		<input autofocus id="name" type="text" name="name" class="input-field" required placeholder="Enter your name" maxlength="100" size="50">
+      	        </div>
+            </div>
+            <div class="row">
+            	<div class="labels">
+      		<label id="email-label" for="email">* Email: </label>
+      	        </div>
+      	        <div class="tab">
+      		<input autofocus id="email" type="email" name="email" class="input-field" required placeholder="Enter your Email" maxlength="100" size="50">
+      		    </div>
+         	</div>
+         	<div class="row">
+         		<div class="labels">
+      		<label id="number-label" for="number">* Age: </label>
+      	        </div>
+      	        <div class="tab">
+      		<input autofocus id="number" type="number" name="age" class="input-field" required placeholder="Enter your Age" min="12" max="25" size="50">
+      		    </div>
+      	    </div>
+      	    <div class="row">
+      	    	<div class="labels">
+      	    		<label for="present-state">Which option describes your current position?</label>
+      	    	</div>
+      	    	<div class="tab">
+      	    		<select id="dropdown" name="present-state" class="dropdown">
+      	    			<option disabled value>select an option</option>
+      	    			<option value="student">Student</option>
+      	    			<option value="learner">Learner</option>
+      	    			<option value="job">Full time job</option>
+      	    			<option value="prefreNo">Prefer not to say</option>
+      	    			<option value="other">Ohter</option>
+      	    		</select>
+      	    	</div>
+      	    </div>
+      	    <div class="row">
+      	    	<div class="labels">
+      	    		<label for="userrating">* How likely is that you would recommend Bookistan to a friend?</label>
+      	    	</div>
+      	    	<div class="tab">
+      	    		<ul style="list-style: none;">
+      	    			<li class="radio">
+      	    				<label>	
+      	    					Definetly
+      	    					<input class="userrating" name="radio-buttons" type="radio" value="1">
+      	    				</label>
+      	    			</li>
+      	    			<li class="radio">
+      	    				<label>
+      	    					Maybe
+      	    					<input class="userrating" name="radio-buttons" type="radio" value="2">
+      	    				</label>
+      	    			</li>
+      	    			<li class="radio">
+      	    				<label>
+      	    					Not sure
+      	    					<input class="userrating" name="radio-buttons" type="radio" value="3">
+      	    				</label>
+      	    			</li>
+      	    		</ul>
+      	    	</div>
+      	    </div>
+      	    <div class="row">
+      	    	<div class="labels">
+      	    		<label for="most-like">What do you like most in Bookistan: </label>
+      	    	</div>
+      	    	<div class="tab">
+      	    		<select id="most-like" name="most-like" class="dropdown">
+      	    			<option disabled value>Select an option</option>
+      	    			<option value="Collections">Collections</option>
+      	    			<option value="community">Community</option>
+      	    			<option value="Geners Available">Geners Available</option>
+      	    			<option value="Meet-Up">Monthly Meet Up</option>
+      	    		</select>
+      	    	</div>
+      	    </div>
+      	        <div class="row">
+      	    	<div class="labels">
+      	    		<label for="preferences">Things that should be improved in future <br>(check all that apply): </label>
+      	    	</div>
+      	    	<div class="tab">
+      	    		<ul id="ptreferences" style="list-style: none;">
+      	    			<li class="checkbox">
+      	    				<label>	
+      	    					Definetly
+      	    					<input class="userrating" name="prefer" type="checkbox" value="1">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    			        User Interface
+      	    					<input class="userrating" name="prefer" type="checkbox" value="2">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Books Availability
+      	    					<input class="userrating" name="prefer" type="checkbox" value="3">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Comics
+      	    					<input class="userrating" name="prefer" type="checkbox" value="4">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Challenges
+      	    					<input class="userrating" name="prefer" type="checkbox" value="5">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    				  Literature Community
+      	    					<input class="userrating" name="prefer" type="checkbox" value="6">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Gitter help rooms
+      	    					<input class="userrating" name="prefer" type="checkbox" value="7">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Videos
+      	    					<input class="userrating" name="prefer" type="checkbox" value="8">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					City Meetups
+      	    					<input class="userrating" name="prefer" type="checkbox" value="9">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Wiki
+      	    					<input class="userrating" name="prefer" type="checkbox" value="10">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Forum
+      	    					<input class="userrating" name="prefer" type="checkbox" value="11">
+      	    				</label>
+      	    			</li>
+      	    			<li class="checkbox">
+      	    				<label>
+      	    					Additional Courses
+      	    					<input class="userrating" name="prefer" type="checkbox" value="12">
+      	    				</label>
+      	    			</li>
+      	    		</ul>
+      	    	</div>
+      	    </div>
+      	    <div class="row">
+      	    	<div class="labels">
+      	    		<label for="comments">Any comments or suggestion?</label>
+      	    	</div>
+      	    	<div class="tab">
+      	    		<textarea class="input-field" id="comments" style="height:50px;resize: vertical;" name="comments" placeholder="Enter your comments here....."></textarea>
+      	    	</div>
+      	    </div>
+      	    <button id="submit" type="submit">Submit</button>
+      	</form>
+      </div>
+	</body>
+</html>
